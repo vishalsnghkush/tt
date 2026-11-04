@@ -78,8 +78,8 @@ export const CredentialsSection: React.FC = () => {
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                     <span className="truncate">{cert.credentialId || 'Credential details'}</span>
                   </span>
-                  {cert.link ? (
-                    <a href={cert.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs font-semibold text-purple-700 dark:text-purple-300 hover:underline shrink-0">
+                  {(cert.link || cert.certificateImage) ? (
+                    <a href={cert.link || cert.certificateImage} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs font-semibold text-purple-700 dark:text-purple-300 hover:underline shrink-0">
                       View certificate <ExternalLink className="w-3 h-3" />
                     </a>
                   ) : (

@@ -816,6 +816,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: "IBM",
     year: "2025",
     credentialId: "IBM-AI-PROF-666",
+    certificateImage: "/certificates/IBM.jpeg",
     color: "blue",
     badge: "Verified Professional",
     skills: ["Applied AI", "Deep Learning", "Computer Vision", "NLP Pipelines", "Watson APIs", "Prompt Engineering"],
@@ -827,6 +828,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: "GeeksforGeeks",
     year: "2025–2026",
     credentialId: "GFG-DSA-FOT-853",
+    certificateImage: "/certificates/DSA_.jpeg",
     color: "emerald",
     badge: "FoT Rank #1 (Score: 853)",
     skills: ["Data Structures", "Graph Algorithms", "Dynamic Programming", "Tree Traversals", "Algorithm Complexity"],
@@ -838,6 +840,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: "GeeksforGeeks",
     year: "2025–2026",
     credentialId: "GFG-DS-99214",
+    certificateImage: "/certificates/DATA_Science.jpeg",
     color: "purple",
     badge: "Specialization",
     skills: ["Pandas & NumPy", "scikit-learn", "Feature Engineering", "Statistical Modeling", "Matplotlib"],
@@ -868,14 +871,15 @@ export const CERTIFICATIONS: CertificationItem[] = [
     description: "Certificate of Participation certifying that Aditi Malviya as Team Debug Squad participated in Build & Submit - Prototype Development Round of ArtPark CodeForge Hackathon organised by Indian Institute of Science (IISc), Bangalore."
   },
   {
-    id: "google-bigcode",
-    title: "Google Big Code Challenge Contributor",
-    issuer: "Google Developers Group",
-    year: "2025",
-    credentialId: "GOOGLE-BCC-CONTRIB",
+    id: "soft-skills",
+    title: "Soft Skills Course Online",
+    issuer: "GeeksforGeeks",
+    year: "Course completion",
+    credentialId: "GFG-SOFT-SKILLS",
+    certificateImage: "/certificates/Soft_Skill.jpeg",
     color: "blue",
-    badge: "Contributor",
-    skills: ["Open Source", "Algorithmic Benchmarking", "Code Intelligence", "Git Workflows", "Python"],
-    description: "Honored for contributing algorithmic optimizations and technical documentation to open-source developer benchmarking suites."
+    badge: "Course completion",
+    skills: ["Communication", "Professional Development", "Workplace Skills"],
+    description: "Completed a professional development course covering practical soft skills."
   }
 ];

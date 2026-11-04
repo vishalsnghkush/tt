@@ -1,6 +1,29 @@
 import React from 'react';
 import { EXPERIENCES } from '../data/portfolioData';
-import { Briefcase, CheckCircle2 } from 'lucide-react';
+import { Briefcase, CheckCircle2, ExternalLink } from 'lucide-react';
+
+const EXPERIENCE_DOCUMENTS = [
+  {
+    experienceId: 'studifysuccess',
+    label: 'Internship Certificate',
+    file: '/Experience/Aditi Malviya_CERTIFICATE.jpg.jpeg',
+  },
+  {
+    experienceId: 'studifysuccess',
+    label: 'Best Intern Certificate',
+    file: '/Experience/Aditi Malviya_Best Intern Certificate - Studifysuccess.jpg.jpeg',
+  },
+  {
+    experienceId: 'studifysuccess',
+    label: 'Letter of Recommendation',
+    file: '/Experience/Aditi Malviya_LOR.jpg.jpeg',
+  },
+  {
+    experienceId: 'gssoc',
+    label: 'GSSoC Tech Contributor',
+    file: '/Experience/Girl_Script_.jpg',
+  },
+];
 
 export const ExperienceTimeline: React.FC = () => {
   return (
@@ -69,10 +92,31 @@ export const ExperienceTimeline: React.FC = () => {
                     </span>
                   ))}
                 </div>
+
+                {EXPERIENCE_DOCUMENTS.filter((document) => document.experienceId === exp.id).length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-blush-100 dark:border-slate-800/80">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-purple-700 dark:text-purple-300 mb-2.5">Documents</p>
+                    <div className="flex flex-wrap gap-2">
+                      {EXPERIENCE_DOCUMENTS.filter((document) => document.experienceId === exp.id).map((document) => (
+                        <a
+                          key={document.file}
+                          href={encodeURI(document.file)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:border-purple-300 dark:hover:border-purple-700 hover:text-purple-700 dark:hover:text-purple-300 transition-colors"
+                        >
+                          <span>{document.label}</span>
+                          <ExternalLink className="w-3.5 h-3.5 text-purple-600" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
-        </div>
+
+      </div>
     </section>
   );
 };

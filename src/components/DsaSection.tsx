@@ -6,7 +6,7 @@ const PROFILE_LINKS = [
   {
     label: 'GeeksforGeeks',
     detail: 'Faculty of Technology profile',
-    href: 'https://www.geeksforgeeks.org/profile/aditimalvkfc',
+    href: 'https://www.geeksforgeeks.org/profile/aditimalvkfc4?from=explore',
   },
   {
     label: 'LeetCode',
@@ -27,6 +27,7 @@ const ARCHIVE = [
   {
     title: 'Data Structures & Algorithms in Python',
     detail: 'GeeksforGeeks · credential link coming soon',
+    href: '/certificates/DSA_.jpeg',
   },
 ];
 
@@ -92,6 +93,11 @@ export const DsaSection: React.FC = () => {
                     <div>
                       <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">{item.title}</p>
                       <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">{item.detail}</p>
+                      {item.href && (
+                        <a href={item.href} target="_blank" rel="noreferrer" onClick={() => sound.click()} className="inline-flex items-center gap-1 mt-2 text-xs font-semibold text-purple-700 dark:text-purple-300 hover:underline">
+                          View certificate <ExternalLink className="w-3 h-3" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 ))}

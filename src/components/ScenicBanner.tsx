@@ -462,9 +462,10 @@ export const ScenicBanner: React.FC<ScenicBannerProps> = ({ darkMode, setDarkMod
             <div className="flex items-end gap-3.5">
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-white dark:border-[#111622] shadow-xl overflow-hidden bg-white dark:bg-slate-900 shrink-0 z-20 flex items-center justify-center ring-1 ring-purple-100 dark:ring-slate-800">
                 <img
-                  src="/avatar-clean.png?v=4"
+                  src="/New_avatar_.jpeg"
                   alt="Aditi Malviya avatar"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 30%' }}
                 />
               </div>
 
