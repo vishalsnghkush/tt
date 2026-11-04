@@ -26,13 +26,6 @@ export const GitGridSection: React.FC<GitGridSectionProps> = ({ darkMode }) => {
     { label: 'PR Review & Merge Rate', value: '100%', icon: GitPullRequest, color: 'text-emerald-500' },
   ];
 
-  const languages = [
-    { name: 'Python', percent: 42, color: 'bg-blue-500' },
-    { name: 'TypeScript & React', percent: 34, color: 'bg-purple-500' },
-    { name: 'C++ (Competitive)', percent: 14, color: 'bg-pink-500' },
-    { name: 'SQL & Database', percent: 10, color: 'bg-emerald-500' },
-  ];
-
   return (
     <section id="git-activity" className="py-12 sm:py-16 relative animate-fadeIn">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,15 +34,15 @@ export const GitGridSection: React.FC<GitGridSectionProps> = ({ darkMode }) => {
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blush-100 dark:bg-purple-950/60 border border-blush-200 dark:border-purple-800/40 text-purple-700 dark:text-purple-300 text-xs font-mono mb-3">
             <GitCommit className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-            <span>CONTINUOUS ENGINEERING • OPEN SOURCE</span>
+            <span>GITHUB • OPEN SOURCE</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
-            Git Activity &amp; <em className="font-serif italic font-normal text-purple-700 dark:text-purple-400">Contributions.</em>
+            GitHub<span className="text-purple-600">.</span>
           </h2>
 
           <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
-            Consistent commit velocity across machine learning pipelines, distributed mobile architectures, and algorithmic problem solving.
+            A focused look at open-source work, repositories, and contribution activity.
           </p>
         </div>
 
@@ -147,36 +140,6 @@ export const GitGridSection: React.FC<GitGridSectionProps> = ({ darkMode }) => {
                 </div>
               );
             })}
-          </div>
-
-          {/* Language Breakdown */}
-          <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
-            <div className="text-xs font-mono text-slate-500 dark:text-slate-400 mb-2">
-              Primary Development Stack
-            </div>
-
-            {/* Segmented bar */}
-            <div className="w-full h-2 rounded-full overflow-hidden flex gap-0.5 mb-3 bg-slate-100 dark:bg-slate-800">
-              {languages.map((lang, lIdx) => (
-                <div
-                  key={lIdx}
-                  className={`${lang.color} h-full transition-all`}
-                  style={{ width: `${lang.percent}%` }}
-                  title={`${lang.name}: ${lang.percent}%`}
-                />
-              ))}
-            </div>
-
-            {/* Language legend */}
-            <div className="flex flex-wrap items-center gap-4 text-xs font-sans text-slate-600 dark:text-slate-300">
-              {languages.map((lang, lIdx) => (
-                <div key={lIdx} className="flex items-center gap-1.5">
-                  <span className={`w-2 h-2 rounded-full ${lang.color}`} />
-                  <span className="font-medium">{lang.name}</span>
-                  <span className="text-[10px] font-mono text-slate-400">({lang.percent}%)</span>
-                </div>
-              ))}
-            </div>
           </div>
 
         </div>

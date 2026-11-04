@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { ScenicBanner } from './components/ScenicBanner';
 import { AboutSection } from './components/AboutSection';
-import { MarqueeTags } from './components/MarqueeTags';
 import { ProjectsSection } from './components/ProjectsSection';
 import { EducationSection } from './components/EducationSection';
 import { ExperienceTimeline } from './components/ExperienceTimeline';
-import { CertificationsSection } from './components/CertificationsSection';
+import { DsaSection } from './components/DsaSection';
+import { CredentialsSection } from './components/CredentialsSection';
 import { GitGridSection } from './components/GitGridSection';
-import { SkillsGrid } from './components/SkillsGrid';
+import { SkillsSection } from './components/SkillsSection';
 import { Footer } from './components/Footer';
 import { PetFooter } from './components/PetFooter';
 import { CaseStudyModal } from './components/CaseStudyModal';
@@ -79,7 +79,6 @@ export const App: React.FC = () => {
           <div className="animate-fadeIn">
             <ScenicBanner darkMode={darkMode} setDarkMode={setDarkMode} onNavigate={navigateTo} />
             <AboutSection darkMode={darkMode} onNavigate={navigateTo} />
-            <MarqueeTags />
             <SectionEnd
               label="ABOUT ME"
               desc="See 11 real production projects with live demos and GitHub repos."
@@ -118,7 +117,21 @@ export const App: React.FC = () => {
           </div>
         )}
 
-        {/* 4. EDUCATION */}
+        {/* 4. DSA */}
+        {activeSection === 'dsa' && (
+          <div className="pt-16 animate-fadeIn">
+            <DsaSection />
+            <SectionEnd
+              label="DSA"
+              desc="Explore GitHub activity, open-source work, and the wider engineering toolkit."
+              nextLabel="View GitHub"
+              nextSection="git-grid"
+              onNavigate={navigateTo}
+            />
+          </div>
+        )}
+
+        {/* 5. EDUCATION */}
         {activeSection === 'education' && (
           <div className="pt-16 animate-fadeIn">
             <EducationSection />
@@ -135,7 +148,7 @@ export const App: React.FC = () => {
         {/* 5. CERTIFICATIONS */}
         {activeSection === 'certifications' && (
           <div className="pt-16 animate-fadeIn">
-            <CertificationsSection />
+            <CredentialsSection />
             <SectionEnd
               label="CREDENTIALS COMPLETE"
               desc="Continuous GitHub commits, open-source repositories, and code matrix."
@@ -146,14 +159,13 @@ export const App: React.FC = () => {
           </div>
         )}
 
-        {/* 6. GIT GRID (LAST BEFORE CONTACT) */}
+        {/* 7. GIT */}
         {activeSection === 'git-grid' && (
           <div className="pt-16 animate-fadeIn">
             <GitGridSection darkMode={darkMode} />
-            <SkillsGrid />
             <SectionEnd
-              label="CODE MATRIX & SKILLS"
-              desc="Have an engineering role or collaborative project inquiry? Let's connect."
+              label="GITHUB"
+              desc="Have an engineering role or collaborative project inquiry? Let’s connect."
               nextLabel="Contact Me"
               nextSection="contact"
               onNavigate={navigateTo}
@@ -161,7 +173,21 @@ export const App: React.FC = () => {
           </div>
         )}
 
-        {/* 7. CONTACT */}
+        {/* 8. SKILLS */}
+        {activeSection === 'skills' && (
+          <div className="pt-16 animate-fadeIn">
+            <SkillsSection />
+            <SectionEnd
+              label="SKILLS"
+              desc="See how the toolkit connects across design, engineering, data, and AI."
+              nextLabel="View Git"
+              nextSection="git-grid"
+              onNavigate={navigateTo}
+            />
+          </div>
+        )}
+
+        {/* 9. CONTACT */}
         {activeSection === 'contact' && (
           <div className="pt-16 animate-fadeIn">
             <Footer />

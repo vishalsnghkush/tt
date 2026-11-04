@@ -23,9 +23,10 @@ export const ScenicBanner: React.FC<ScenicBannerProps> = ({ darkMode, setDarkMod
   // Typewriter effect
   const titles = [
     'Full-Stack Developer',
+    'AI/ML Engineer',
+    'Data Science Researcher',
     'Creative Technologist',
-    'CS Engineer (DU FoT)',
-    'UI/UX Craftsman'
+    'Computer Science Student'
   ];
   const [titleIdx, setTitleIdx] = useState(0);
   const [subText, setSubText] = useState('');

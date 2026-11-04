@@ -132,7 +132,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenCaseStud
         {/* Section Header matching the demo aesthetic */}
         <div className="mb-8">
           <p className="text-[11px] sm:text-xs font-mono tracking-widest text-[#9a6377] dark:text-purple-400 font-semibold uppercase mb-2">
-            <span>05 /</span> LESS TALK. MORE THINGS BUILT.
+            <span>02 /</span> LESS TALK. MORE THINGS BUILT.
           </p>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">

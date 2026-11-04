@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { PERSONAL_INFO, CERTIFICATIONS } from '../data/portfolioData';
+import { PERSONAL_INFO } from '../data/portfolioData';
 import { sound } from '../utils/sound';
-import { Github, Linkedin, Mail, ArrowDown, MapPin, Sparkles, Award, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowDown, MapPin, Sparkles, ExternalLink } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface AboutSectionProps {
@@ -41,21 +41,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ darkMode, onNavigate
           {/* Left Column: Bio with Dark/Dull shades in light mode */}
           <div className="lg:col-span-3 space-y-5">
             <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight leading-[1.15]">
-                Hey, I'm{' '}
-                <span className="text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500">
-                  Aditi Malviya
-                </span>{' '}
-                👋
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight leading-[1.08]">
+                I build intelligent products people can use<span className="text-purple-600">.</span>
               </h1>
 
-              <p className="text-base sm:text-lg font-medium font-sans text-slate-700 dark:text-purple-200/90 mt-2">
-                B.Tech CSE student &amp; Full-Stack Developer
+              <p className="text-base sm:text-lg font-medium font-sans text-slate-700 dark:text-purple-200/90 mt-3">
+                Full-stack developer working across AI/ML, data science, and product engineering.
               </p>
 
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-sans leading-relaxed mt-3">
-                Specializing in <strong className="font-semibold text-slate-900 dark:text-purple-100">scalable full-stack development</strong> and <strong className="font-semibold text-slate-900 dark:text-purple-100">algorithmic optimization</strong>. 
-                GFG Institutional Rank #1 with 350+ DSA solved. Hands-on experience shipping production-ready mobile features and containerized systems. Adept at bridging backend architecture with modern developer workflows.
+              <p className="text-base text-slate-600 dark:text-slate-300 font-sans leading-relaxed mt-3 max-w-xl">
+                I turn models, data, and algorithms into clear digital experiences — with strong engineering underneath and thoughtful interfaces on top.
               </p>
             </div>
 
@@ -101,22 +96,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ darkMode, onNavigate
               </a>
             </div>
 
-            {/* Attention Badges: Dull / Dark / Neutral Shades in Light Mode */}
-            <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-              <span className="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-purple-950/50 border border-slate-200 dark:border-purple-800/50 text-slate-700 dark:text-purple-300 flex items-center gap-1.5 shadow-2xs">
-                <span>⚡</span> Powered by Curiosity
-              </span>
-              <span className="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-pink-950/50 border border-slate-200 dark:border-pink-800/50 text-slate-700 dark:text-pink-300 flex items-center gap-1.5 shadow-2xs">
-                <span>🏆</span> GFG FoT Rank #1
-              </span>
-              <span className="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-violet-950/50 border border-slate-200 dark:border-violet-800/50 text-slate-700 dark:text-violet-300 flex items-center gap-1.5 shadow-2xs">
-                <span>🏗️</span> 500K+ Learners Impacted
-              </span>
-              <span className="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-rose-950/50 border border-slate-200 dark:border-rose-800/50 text-slate-700 dark:text-rose-300 flex items-center gap-1.5 shadow-2xs">
-                <span>💻</span> ML + Full-Stack Systems
-              </span>
-            </div>
-
             {/* Navigate to Projects Button: Dull / Dark Shade in Light Mode */}
             <div className="pt-1">
               <button
@@ -132,93 +111,39 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ darkMode, onNavigate
             </div>
           </div>
 
-          {/* Right Column: Stats + GitHub Grid */}
-          <div className="lg:col-span-2 space-y-4">
-            {/* Stats Cards: Clean Slate in Light Mode */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="p-4 rounded-2xl bg-white dark:from-pink-950/30 dark:to-slate-900/50 border border-slate-200 dark:border-pink-900/50 text-center shadow-xs hover:border-slate-300 transition-colors">
-                <div className="text-2xl font-extrabold font-mono text-slate-900 dark:text-pink-400">#1</div>
-                <div className="text-[11px] text-slate-500 dark:text-pink-300 font-sans mt-0.5 font-medium">GFG FoT Rank</div>
-              </div>
-              <div className="p-4 rounded-2xl bg-white dark:from-purple-950/30 dark:to-slate-900/50 border border-slate-200 dark:border-purple-900/50 text-center shadow-xs hover:border-slate-300 transition-colors">
-                <div className="text-2xl font-extrabold font-mono text-slate-900 dark:text-purple-400">350+</div>
-                <div className="text-[11px] text-slate-500 dark:text-purple-300 font-sans mt-0.5 font-medium">DSA Solved</div>
-              </div>
-              <div className="p-4 rounded-2xl bg-white dark:from-violet-950/30 dark:to-slate-900/50 border border-slate-200 dark:border-violet-900/50 text-center shadow-xs hover:border-slate-300 transition-colors">
-                <div className="text-2xl font-extrabold font-mono text-slate-900 dark:text-violet-400">500K+</div>
-                <div className="text-[11px] text-slate-500 dark:text-violet-300 font-sans mt-0.5 font-medium">Learners Impacted</div>
-              </div>
-              <div className="p-4 rounded-2xl bg-white dark:from-rose-950/30 dark:to-slate-900/50 border border-slate-200 dark:border-rose-900/50 text-center shadow-xs hover:border-slate-300 transition-colors">
-                <div className="text-2xl font-extrabold font-mono text-slate-900 dark:text-rose-400">8.7</div>
-                <div className="text-[11px] text-slate-500 dark:text-rose-300 font-sans mt-0.5 font-medium">CGPA (DU FoT)</div>
-              </div>
-            </div>
-
-            {/* GitHub Contribution Graph */}
-            <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-purple-900/40 shadow-xs backdrop-blur-sm">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-2">
-                  <Github className="w-4 h-4 text-slate-800 dark:text-purple-300" />
-                  <span className="text-xs font-semibold text-slate-900 dark:text-purple-200 font-mono">GitHub Activity</span>
+          {/* Right Column: one quiet proof card instead of a dashboard */}
+          <div className="lg:col-span-2">
+            <div className="p-5 sm:p-6 rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="flex items-center justify-between gap-3 mb-5">
+                <div>
+                  <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-purple-600 dark:text-purple-400">At a glance</p>
+                  <h2 className="mt-1 text-lg font-bold text-slate-900 dark:text-white">A few useful signals</h2>
                 </div>
-                <button
-                  onClick={() => { sound.click(); onNavigate?.('git-grid'); }}
-                  className="text-[10px] font-mono text-slate-600 hover:text-slate-900 dark:text-purple-400 dark:hover:text-pink-500 hover:underline flex items-center gap-0.5 cursor-pointer"
-                >
-                  Full Activity
-                  <ExternalLink className="w-2.5 h-2.5" />
-                </button>
+                <Github className="w-5 h-5 text-slate-400 dark:text-slate-500" />
               </div>
-              <div className="rounded-lg overflow-hidden bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800 p-1">
-                <img
-                  src={`https://ghchart.rshah.org/${darkMode ? 'c084fc' : '334155'}/aditi-malviya666`}
-                  alt="GitHub Contribution Chart for aditi-malviya666"
-                  className="w-full h-auto"
-                  loading="lazy"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    const parent = e.currentTarget.parentElement;
-                    if (parent && !parent.querySelector('.gh-fallback')) {
-                      const fallback = document.createElement('div');
-                      fallback.className = 'gh-fallback p-3 text-center';
-                      fallback.innerHTML = '<span class="text-xs text-slate-500 font-mono">GitHub activity verified • 350+ commits</span>';
-                      parent.appendChild(fallback);
-                    }
-                  }}
-                />
-              </div>
-              <div className="mt-2 flex items-center justify-between text-[10px] font-mono text-slate-500">
-                <span>Contributions last year</span>
-                <span className="text-slate-900 dark:text-pink-500 font-semibold">aditi-malviya666</span>
-              </div>
-            </div>
 
-            {/* Certifications preview */}
-            <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-pink-900/40 shadow-xs backdrop-blur-sm">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-slate-700 dark:text-pink-500" />
-                  <span className="text-xs font-semibold text-slate-900 dark:text-pink-200 font-mono">Certifications</span>
+              <dl className="space-y-3">
+                <div className="flex items-baseline justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-3">
+                  <dt className="text-sm text-slate-600 dark:text-slate-400">GFG Faculty of Technology rank</dt>
+                  <dd className="text-lg font-bold font-mono text-slate-900 dark:text-white">#1</dd>
                 </div>
-                <button
-                  onClick={() => { sound.click(); onNavigate?.('certifications'); }}
-                  className="text-[10px] font-mono text-slate-600 hover:text-slate-900 dark:text-pink-400 dark:hover:text-purple-500 hover:underline flex items-center gap-0.5 cursor-pointer"
-                >
-                  View All ({CERTIFICATIONS.length})
-                  <ExternalLink className="w-2.5 h-2.5" />
-                </button>
-              </div>
-              <div className="space-y-2">
-                {CERTIFICATIONS.slice(0, 4).map((cert) => (
-                  <div key={cert.id} className="flex items-start gap-2 p-2 rounded-lg bg-slate-50 dark:bg-pink-950/20 border border-slate-200/80 dark:border-pink-950/40">
-                    <div className="w-1.5 h-1.5 rounded-full bg-slate-700 dark:bg-pink-500 mt-1 shrink-0" />
-                    <div className="min-w-0 flex-1">
-                      <div className="text-[11px] font-semibold text-slate-800 dark:text-slate-200 truncate">{cert.title}</div>
-                      <div className="text-[10px] font-mono text-slate-500 dark:text-purple-400">{cert.issuer} · {cert.year}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                <div className="flex items-baseline justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-3">
+                  <dt className="text-sm text-slate-600 dark:text-slate-400">Data structures problems</dt>
+                  <dd className="text-lg font-bold font-mono text-slate-900 dark:text-white">350+</dd>
+                </div>
+                <div className="flex items-baseline justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-3">
+                  <dt className="text-sm text-slate-600 dark:text-slate-400">University CGPA</dt>
+                  <dd className="text-lg font-bold font-mono text-slate-900 dark:text-white">8.7</dd>
+                </div>
+              </dl>
+
+              <button
+                onClick={() => { sound.click(); onNavigate?.('git-grid'); }}
+                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-purple-700 dark:text-purple-300 hover:underline cursor-pointer"
+              >
+                See GitHub activity
+                <ExternalLink className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
         </div>

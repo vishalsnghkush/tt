@@ -26,9 +26,11 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
+    { id: 'dsa', label: 'DSA' },
     { id: 'education', label: 'Education' },
     { id: 'certifications', label: 'Certifications' },
-    { id: 'git-grid', label: 'Git Grid' },
+    { id: 'git-grid', label: 'Git' },
+    { id: 'skills', label: 'Skills' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -74,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Center: Desktop Navigation links pill with active glow */}
         <nav
-          className={`hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full backdrop-blur-md transition-all duration-300 border ${
+          className={`hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full backdrop-blur-md transition-all duration-300 border ${
             scrolled
               ? 'bg-white/85 dark:bg-[#111622]/85 border-blush-200 dark:border-slate-800 shadow-md'
               : 'bg-white/60 dark:bg-[#111622]/60 border-blush-100/70 dark:border-slate-800/50'
@@ -155,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               sound.click();
               setMobileMenuOpen(!mobileMenuOpen);
             }}
-            className="md:hidden p-1.5 rounded-full hover:bg-blush-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200"
+            className="lg:hidden p-1.5 rounded-full hover:bg-blush-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -165,7 +167,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 max-w-sm mx-auto p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-blush-200 dark:border-slate-800 shadow-xl pointer-events-auto animate-fadeIn">
+        <div className="lg:hidden mt-2 max-w-sm mx-auto p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-blush-200 dark:border-slate-800 shadow-xl pointer-events-auto animate-fadeIn">
           <div className="flex flex-col gap-1.5">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
