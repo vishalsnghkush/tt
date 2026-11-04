@@ -86,14 +86,17 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ darkMode, onNavigate
                 <span>{copied ? '✨ Copied!' : PERSONAL_INFO.email}</span>
               </button>
 
-              <a
-                href="mailto:malviyaaditi2006@gmail.com?subject=Opportunity%20for%20Aditi%20Malviya"
-                onClick={() => sound.sparkle()}
+              <button
+                type="button"
+                onClick={() => {
+                  sound.sparkle();
+                  onNavigate?.('contact');
+                }}
                 className="px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white dark:bg-gradient-to-r dark:from-pink-500 dark:via-purple-500 dark:to-indigo-500 text-xs font-semibold transition-all shadow-xs flex items-center gap-1.5 hover:scale-105 active:scale-95 cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                 <span>Get in Touch</span>
-              </a>
+              </button>
             </div>
 
             {/* Navigate to Projects Button: Dull / Dark Shade in Light Mode */}
@@ -116,8 +119,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ darkMode, onNavigate
             <div className="p-5 sm:p-6 rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 shadow-sm">
               <div className="flex items-center justify-between gap-3 mb-5">
                 <div>
-                  <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-purple-600 dark:text-purple-400">At a glance</p>
-                  <h2 className="mt-1 text-lg font-bold text-slate-900 dark:text-white">A few useful signals</h2>
+                  <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-purple-600 dark:text-purple-400">Highlights</p>
+                  <h2 className="mt-1 text-lg font-bold text-slate-900 dark:text-white">Selected achievements</h2>
                 </div>
                 <Github className="w-5 h-5 text-slate-400 dark:text-slate-500" />
               </div>
