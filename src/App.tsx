@@ -12,6 +12,7 @@ import { SkillsSection } from './components/SkillsSection';
 import { Footer } from './components/Footer';
 import { PetFooter } from './components/PetFooter';
 import { CaseStudyModal } from './components/CaseStudyModal';
+import { IntroSequence } from './components/IntroSequence';
 import { Project } from './types';
 import { sound } from './utils/sound';
 import { ArrowRight, ArrowUp, Sparkles } from 'lucide-react';
@@ -40,6 +41,7 @@ const SectionEnd: React.FC<{ label: string; desc: string; nextLabel: string; nex
 );
 
 export const App: React.FC = () => {
+  const [showIntro, setShowIntro] = useState(true);
   const [activeSection, setActiveSection] = useState<string>('about');
   const [darkMode, setDarkMode] = useState<boolean>(false);
   const [soundEnabled, setSoundEnabled] = useState<boolean>(true);
@@ -61,7 +63,9 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative font-sans text-slate-800 dark:text-slate-100 bg-[#FAF3F8] dark:bg-[#0B0E14] transition-colors duration-500 selection:bg-pink-300/40 selection:text-purple-900 dark:selection:bg-purple-900/40 dark:selection:text-purple-200">
+    <>
+      {showIntro && <IntroSequence onComplete={() => setShowIntro(false)} />}
+      <div className="min-h-screen relative font-sans text-slate-800 dark:text-slate-100 bg-[#FAF3F8] dark:bg-[#0B0E14] transition-colors duration-500 selection:bg-pink-300/40 selection:text-purple-900 dark:selection:bg-purple-900/40 dark:selection:text-purple-200">
       
       <Navbar
         activeSection={activeSection}
@@ -200,6 +204,7 @@ export const App: React.FC = () => {
         onClose={() => setActiveCaseStudy(null)}
       />
 
-    </div>
+      </div>
+    </>
   );
 };

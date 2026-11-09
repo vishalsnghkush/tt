@@ -460,7 +460,7 @@ export const ScenicBanner: React.FC<ScenicBannerProps> = ({ darkMode, setDarkMod
             
             {/* Clean Circular Avatar without artifacts */}
             <div className="flex items-end gap-3.5">
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-white dark:border-[#111622] shadow-xl overflow-hidden bg-white dark:bg-slate-900 shrink-0 z-20 flex items-center justify-center ring-1 ring-purple-100 dark:ring-slate-800">
+              <div data-intro-avatar-target className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-white dark:border-[#111622] shadow-xl overflow-hidden bg-white dark:bg-slate-900 shrink-0 z-20 flex items-center justify-center ring-1 ring-purple-100 dark:ring-slate-800">
                 <img
                   src="/New_avatar_.jpeg"
                   alt="Aditi Malviya avatar"
@@ -505,7 +505,7 @@ export const ScenicBanner: React.FC<ScenicBannerProps> = ({ darkMode, setDarkMod
           {/* Name & Animated Typewriter Title */}
           <div className="mt-1">
             <div className="flex items-center gap-2">
-              <h1 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white tracking-tight">
+              <h1 data-intro-name-target className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white tracking-tight">
                 Aditi Malviya
               </h1>
               {/* Blue Verified Badge Checkmark */}
