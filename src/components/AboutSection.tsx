@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { sound } from '../utils/sound';
-import { Github, Linkedin, Mail, ArrowDown, MapPin, Sparkles, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Sparkles, ExternalLink } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface AboutSectionProps {
@@ -99,30 +99,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ darkMode, onNavigate
               </button>
             </div>
 
-            {/* Navigate to Projects Button: Dull / Dark Shade in Light Mode */}
-            <div className="pt-1">
-              <button
-                onClick={() => {
-                  sound.click();
-                  onNavigate?.('projects');
-                }}
-                className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500 dark:hover:from-purple-500 dark:hover:to-pink-400 text-xs font-semibold transition-all shadow-md active:scale-95 hover:scale-105 cursor-pointer"
-              >
-                <span>Explore Projects</span>
-                <ArrowDown className="w-3.5 h-3.5" />
-              </button>
-            </div>
+
           </div>
 
           {/* Right Column: one quiet proof card instead of a dashboard */}
           <div className="lg:col-span-2">
             <div className="p-5 sm:p-6 rounded-3xl bg-white/80 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 shadow-sm">
-              <div className="flex items-center justify-between gap-3 mb-5">
-                <div>
-                  <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-purple-600 dark:text-purple-400">Highlights</p>
-                  <h2 className="mt-1 text-lg font-bold text-slate-900 dark:text-white">Selected achievements</h2>
-                </div>
-                <Github className="w-5 h-5 text-slate-400 dark:text-slate-500" />
+              <div className="mb-5">
+                <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-purple-600 dark:text-purple-400">Highlights</p>
+                <h2 className="mt-1 text-lg font-bold text-slate-900 dark:text-white">Selected achievements</h2>
               </div>
 
               <dl className="space-y-3">
@@ -138,15 +123,28 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ darkMode, onNavigate
                   <dt className="text-sm text-slate-600 dark:text-slate-400">University CGPA</dt>
                   <dd className="text-lg font-bold font-mono text-slate-900 dark:text-white">8.7</dd>
                 </div>
+                <div className="pt-0.5">
+                  <div className="flex items-baseline justify-between gap-4">
+                    <dt className="text-sm text-slate-600 dark:text-slate-400">
+                      <div>StudifySuccess App</div>
+                      <div className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Active learners</div>
+                    </dt>
+                    <dd className="text-lg font-bold font-mono text-slate-900 dark:text-white">500K+</dd>
+                  </div>
+                  <div className="mt-2.5">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.studifysuccess.courses"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => sound.click()}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold shadow-xs transition-transform hover:scale-105 active:scale-95"
+                    >
+                      <span>View on Google Play</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
               </dl>
-
-              <button
-                onClick={() => { sound.click(); onNavigate?.('git-grid'); }}
-                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-purple-700 dark:text-purple-300 hover:underline cursor-pointer"
-              >
-                See GitHub activity
-                <ExternalLink className="w-3.5 h-3.5" />
-              </button>
             </div>
           </div>
         </div>

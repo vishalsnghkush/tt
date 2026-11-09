@@ -153,10 +153,12 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => sound.click()}
-                className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium flex items-center gap-2 transition-colors shadow-sm"
+                className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center gap-2 transition-colors shadow-sm"
               >
                 <ExternalLink className="w-4 h-4" />
-                <span>Live Deployment</span>
+                <span>
+                  {project.links.live.includes('play.google') ? 'View on Google Play' : 'Live Deployment'}
+                </span>
               </a>
             )}
           </div>

@@ -55,8 +55,21 @@ export const ExperienceTimeline: React.FC = () => {
                     <h3 className="text-lg font-bold font-display text-slate-900 dark:text-white">
                       {exp.role}
                     </h3>
-                    <div className="text-sm font-semibold text-purple-600 dark:text-purple-400 font-sans">
-                      {exp.company}
+                    <div className="flex flex-wrap items-center gap-2 mt-0.5">
+                      <span className="text-sm font-semibold text-purple-600 dark:text-purple-400 font-sans">
+                        {exp.company}
+                      </span>
+                      {exp.link && (
+                        <a
+                          href={exp.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-purple-100 hover:bg-purple-200 dark:bg-purple-950/70 dark:hover:bg-purple-900/80 text-purple-700 dark:text-purple-300 text-[11px] font-semibold transition-colors"
+                        >
+                          <span>Google Play Store</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      )}
                     </div>
                   </div>
                   <div className="text-right">
@@ -93,10 +106,21 @@ export const ExperienceTimeline: React.FC = () => {
                   ))}
                 </div>
 
-                {EXPERIENCE_DOCUMENTS.filter((document) => document.experienceId === exp.id).length > 0 && (
+                {(exp.link || EXPERIENCE_DOCUMENTS.filter((document) => document.experienceId === exp.id).length > 0) && (
                   <div className="mt-4 pt-4 border-t border-blush-100 dark:border-slate-800/80">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-purple-700 dark:text-purple-300 mb-2.5">Documents</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-purple-700 dark:text-purple-300 mb-2.5">Credentials &amp; App Links</p>
                     <div className="flex flex-wrap gap-2">
+                      {exp.link && (
+                        <a
+                          href={exp.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold shadow-xs transition-colors"
+                        >
+                          <span>View on Google Play</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      )}
                       {EXPERIENCE_DOCUMENTS.filter((document) => document.experienceId === exp.id).map((document) => (
                         <a
                           key={document.file}

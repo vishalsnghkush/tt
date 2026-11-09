@@ -54,6 +54,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenCaseStu
 
         {/* Category + Year badge overlay */}
         <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 z-10">
+          {project.isResearch && (
+            <span className="text-[9px] font-mono tracking-wide px-2 py-0.5 rounded-full bg-purple-700/85 backdrop-blur-sm text-purple-100 font-semibold border border-purple-400/40">
+              Research
+            </span>
+          )}
           <span className="text-[9px] font-mono tracking-wide px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-sm text-white/95 font-medium border border-white/10">
             {project.stackCategory || project.category}
           </span>
@@ -170,10 +175,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenCaseStu
               target="_blank"
               rel="noreferrer"
               onClick={() => sound.click()}
-              className="w-11 h-10 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-purple-50 dark:hover:bg-purple-950/60 hover:border-purple-500 hover:scale-105 active:scale-95 transition-all shadow-xs flex items-center justify-center shrink-0"
-              title="Open Live Demo"
+              className={`h-10 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-purple-50 dark:hover:bg-purple-950/60 hover:border-purple-500 hover:scale-105 active:scale-95 transition-all shadow-xs flex items-center justify-center shrink-0 ${
+                project.links.live.includes('play.google') ? 'px-3 gap-1.5' : 'w-11'
+              }`}
+              title={project.links.live.includes('play.google') ? 'View on Google Play' : 'Open Live Demo'}
             >
-              <ExternalLink className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+              <ExternalLink className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+              {project.links.live.includes('play.google') && (
+                <span className="text-[11px] font-semibold text-slate-800 dark:text-slate-200">Play Store</span>
+              )}
             </a>
           )}
         </div>

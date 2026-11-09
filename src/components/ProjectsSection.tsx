@@ -19,10 +19,11 @@ import {
 
 interface ProjectsSectionProps {
   onOpenCaseStudy: (project: Project) => void;
+  initialCategory?: string;
 }
 
-export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenCaseStudy }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All work');
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenCaseStudy, initialCategory = 'All work' }) => {
+  const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
   const [viewMode, setViewMode] = useState<'deck' | 'grid'>('deck');
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [progress, setProgress] = useState<number>(0);
@@ -39,6 +40,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenCaseStud
     { id: 'Mobile', label: 'Mobile', count: PROJECTS.filter(p => p.stackCategory === 'Mobile' || p.category.includes('Mobile')).length },
     { id: 'AI & ML', label: 'AI & ML', count: PROJECTS.filter(p => p.stackCategory === 'AI & ML' || p.category.includes('AI')).length },
     { id: 'Systems', label: 'Systems', count: PROJECTS.filter(p => p.stackCategory === 'Systems' || p.category.includes('Systems') || p.category.includes('Vision')).length },
+    { id: 'Research', label: 'Research', count: PROJECTS.filter(p => Boolean(p.isResearch || p.id === 'agriverse-web' || p.id === 'diabetic-retinopathy')).length },
   ];
 
   const filteredProjects = selectedCategory === 'All work'
@@ -48,6 +50,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenCaseStud
         if (selectedCategory === 'Mobile') return p.stackCategory === 'Mobile' || p.category.includes('Mobile');
         if (selectedCategory === 'AI & ML') return p.stackCategory === 'AI & ML' || p.category.includes('AI');
         if (selectedCategory === 'Systems') return p.stackCategory === 'Systems' || p.category.includes('Systems') || p.category.includes('Vision');
+        if (selectedCategory === 'Research') return Boolean(p.isResearch || p.id === 'agriverse-web' || p.id === 'diabetic-retinopathy');
         return true;
       });
 
